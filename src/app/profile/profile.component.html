@@ -1,0 +1,141 @@
+<app-navigation></app-navigation>
+<div class="container-fluid" style="background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255,255,255,.6)), url('assets/5.jpg');">
+
+  <div class="d-flex justify-content-center h-100  ">
+    <div class="card mt-5">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <h4><i class="fas fa-user-circle"></i> Profile</h4>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <form #profileForm="ngForm" (ngSubmit)="updateUser(profileForm.value);">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label for="firstname" class="col-4 col-form-label">First Name</label>
+                    <div class="col-8">
+                      <input id="firstname" name="firstname" placeholder="First Name" [ngModel]="user?.firstname"
+                        class="form-control here" type="text" maxlength="25" readonly>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                    <div class="col-8">
+                      <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text"
+                        maxlength="25" [ngModel]="user?.lastname" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group row">
+                    <label for="username" class="col-4 col-form-label">Username</label>
+                    <div class="col-8">
+                      <input id="username" name="username" placeholder="Username" class="form-control here" type="text"
+                        maxlength="25" [ngModel]="user?.username">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group row">
+                    <label for="email" class="col-4 col-form-label">Email*</label>
+                    <div class="col-8">
+                      <input id="email" name="email" placeholder="Email" class="form-control here"
+                        [ngModel]="user?.email" maxlength="25" required="required" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group row">
+                    <label for="street_address" class="col-4 col-form-label">Street Address</label>
+                    <div class="col-8">
+                      <input id="street_address" name="street_address" maxlength="25" [ngModel]="user?.street_address"
+                        placeholder="Street Address" class="form-control here" type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group row">
+                    <label for="city" class="col-4 col-form-label">City</label>
+                    <div class="col-8">
+                      <input id="city" name="city" placeholder="City" class="form-control here" maxlength="14"
+                        type="text" [ngModel]="user?.city">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group row">
+                    <label for="state" class="col-4 col-form-label">State</label>
+                    <div class="col-8">
+                      <input id="state" name="state" placeholder="State" maxlength="2" class="form-control here"
+                        type="text" [ngModel]="user?.state">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group row">
+                    <label for="zip" class="col-4 col-form-label">Zipcode</label>
+                    <div class="col-8">
+                      <input id="zip" name="zip" placeholder="Zipcode" class="form-control here" ngModel maxlength="5"
+                        type="number" [ngModel]="user?.zip">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label for="subscription" class="col-4 col-form-label">Subscription
+                      Level</label>
+                    <div class="col-8">
+                      <select class="form-control here" [ngModel]="user?.subscription" name="subscription"
+                        (change)="updateSubscription($event.target.value);">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label for="payment_status" class="col-4 col-form-label">Payment Status</label>
+                    <div class="col-8">
+                      <select class="form-control here" [ngModel]="user?.payment_status" name="payment_status">
+                        <option value="Paid">Paid</option>
+                        <option value="Past due">Past due</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="submit" value="Update" class="btn float-right login_btn">
+              </div>
+
+            </form>
+            <div class="d-flex justify-content-center align-middle" *ngIf="isUserUpdated">
+              <i class="fas fa-check-circle text-success fa-2x"></i>&nbsp; Successfully Updated
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

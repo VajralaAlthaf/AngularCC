@@ -1,0 +1,21 @@
+<app-navigation></app-navigation>
+
+<div class="container-fluid " style="background-color: currentColor;height: 100vh;background: linear-gradient(rgba(255, 255, 255, .7), rgba(255,255,255,.7)), url('assets/7.jpg');">
+
+    <div class="d-flex justify-content-center ">
+        <div class="card" style="height:275px;background-color:black" class="mt-5">
+          <div class="card-header"><h5 class="text-secondary">Fill in your card details</h5></div>
+            <div class="card-body">
+                <form #paymentform="ngForm" (ngSubmit)="buy()">
+                    <input type="text" class="form-control" placeholder="Name on the card"><br>
+                    <div id="cardelement" style="width:500px ">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-success float-right">Proceed to Payment</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

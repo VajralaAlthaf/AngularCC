@@ -1,0 +1,140 @@
+<app-navigation></app-navigation>
+<div class="container-fluid" style="background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255,255,255,.6)), url('assets/4.jpg');">
+    <div class="d-flex justify-content-center h-100 " *ngIf= "login" >
+      <div class="card mt-5">
+        <div class="card-header">
+          <h3>Sign In</h3>
+          <div class="d-flex justify-content-end social_icon">
+            <span (click)="signInWithFB()"><i class="fab fa-facebook"></i></span>
+            <!-- <span #customBtn><i class="fab fa-google" ></i></span> -->
+            <span (click)="signInWithGoogle()"><i class="fab fa-google" ></i></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <form #login="ngForm" (ngSubmit)= "signIn(login.value)">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="email" name = "username" ngModel class="form-control" placeholder="email">
+              
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" name = "password" ngModel class="form-control" placeholder="password">
+            </div>
+            <div class="row align-items-center remember">
+              <input type="checkbox" name= "remember_me" ngModel>Remember Me
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Login" class="btn float-right login_btn">
+            </div>
+          </form>
+         
+        </div>
+
+        <div class="card-footer">
+          <div class="d-flex justify-content-center links">
+            Don't have an account?&nbsp;<a href="javascript:void(0);" (click)="setRegister();">Sign Up</a>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a href="#">Forgot your password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Register Form-->
+<div class="d-flex justify-content-center h-100 " *ngIf="register" >
+    <div class="card mt-5" style="height:550px;width:1000px;">
+      <div class="card-header">
+        <h3>Sign Up</h3>
+
+      </div>
+      <div class="card-body">
+        <form #create="ngForm" (ngSubmit)= "signUp(create.value)">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group ">
+                    <input type="text" name = "firstname" ngModel class="form-control pb-3" placeholder="First name">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group ">
+                    <input type="text" name = "lastname" ngModel class="form-control" placeholder="Last name">
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" name = "username" ngModel class="form-control" placeholder="username">  
+                  </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">@</span>
+                    </div>
+                    <input type="email" name = "email" ngModel class="form-control" placeholder="email">  
+                  </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6 col-sm-12">
+                  <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                      </div>
+                      <input type="password" name = "password" ngModel class="form-control" placeholder="password">
+                    </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input type="password" name = "confirm_password" ngModel class="form-control" placeholder="confirm password">
+                </div>
+            </div>
+          </div>
+          <div class="row">     
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" name = "street_address" ngModel class="form-control" placeholder="Street Address">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" name = "city" ngModel class="form-control" placeholder="City">
+                    </div>
+                </div>  
+          </div>
+          <div class="row">     
+              <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                      <input type="text" name = "state" ngModel class="form-control" placeholder="State">
+                  </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                      <input type="number" name = "zip" ngModel class="form-control" placeholder="Zipcode">
+                  </div>
+              </div>  
+        </div>
+          <div class="form-group">
+            <input type="submit" value="Sign Up" class="btn float-right login_btn">
+          </div>
+        </form>
+        <div class="d-flex justify-content-center links">
+            Already have an account?&nbsp;<a href="javascript:void(0);" (click)="register=false;login=true;">Sign In</a>
+        </div>
+      </div>
+      
+    </div>
+</div>
+  </div>

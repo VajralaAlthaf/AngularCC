@@ -1,0 +1,15 @@
+
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+
+.container-fluid {
+  background-color: currentColor;
+  height:100vh;
+}
+img {
+  opacity: 0.4;
+}

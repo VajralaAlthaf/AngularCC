@@ -1,0 +1,37 @@
+<app-navigation></app-navigation>
+<div class="container-fluid" style="background-color: currentColor;height: 100vh;color:white; background: linear-gradient(rgba(255, 255, 255, .9), rgba(255,255,255,.9)), url('assets/6.jpg');">
+    <table class="table table-borderless table-striped" >
+        <thead class=" mt-5">
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Username</th>
+            <th>Subscription</th>
+            <th>Payment Status</th>
+            <th>Make Admin</th>
+            <th>Edit User</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+             <td>{{user.firstname}}</td>
+             <td>{{user.lastname}}</td>
+             <td>{{user.username}}</td>
+             <td>{{user.subscription}}</td>
+             <td>{{user.payment_status}}</td>
+             <td style="cursor: pointer;" *ngIf = "!user.isAdmin"><a  (click)="makeAdmin(user);"><i class="fas fa-users-cog  text-success"></i></a></td>
+             <td *ngIf = "user.isAdmin">Admin</td>
+             <td style="cursor: pointer;" *ngIf = "!user.isAdmin"><a  [routerLink]="['/profile',user.username]"><i class="fas fa-edit text-success"></i></a></td>
+             <td *ngIf = "user.isAdmin">can't edit admin</td>
+          </tr>
+        </tbody>
+    </table>
+    <ngb-pagination class="d-flex justify-content-end"
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="users.length"></ngb-pagination>
+</div>
+
+
+
+  

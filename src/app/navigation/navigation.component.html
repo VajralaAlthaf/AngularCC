@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="JavaScript:void(0);">CapeCrucible</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/home">
+          <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="JavaScript:void(0);">
+          <i class="fas fa-users"></i> About</a>
+      <a class="nav-item nav-link" href="JavaScript:void(0);">
+          <i class="fas fa-envelope-square"></i> Contact</a>
+      <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+    </div>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/profile" *ngIf="user?.email"><i  class="fas fa-user-circle"></i> {{service.user.firstname}}</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" *ngIf="user?.isAdmin"><i class="fas fa-list"></i> Users and Subscriptions</a>
+      </li>
+      <li class="nav-item">
+          <!-- <a class="nav-link" data-target="#Login" data-toggle="modal">Sign in</a> -->
+          <a class="nav-link" routerLink="/login" *ngIf="!user?.email">
+            <i class="fas fa-sign-in-alt"></i> Login</a>
+          <a class="nav-link" *ngIf="user?.email" (click)="signOut();">
+            <i class="fas fa-sign-out-alt"></i> Sign Out</a>
+      </li>
+      <!-- <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home','register']">Sign Up</a>
+      </li> -->
+  </ul>
+  </div>
+</nav>
+<div id = "navbarNavAltMarkup" hidden>
+  <!-- <ul>
+    <li>Home</li>
+    <li>About Us</li>
+    <li>Contact</li>
+  </ul> -->
+</div>
+  
+  
+  
