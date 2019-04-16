@@ -34,7 +34,8 @@ replace your_app_id with the copied app id
 # Running project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
-
+# Installing dependencies 
+navigate to the project root folder and run "npm install" (ignore the "npm fix audit warnings")
 ## Development server
 navigate to the project folder in a terminal and run 'ng serve'
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
