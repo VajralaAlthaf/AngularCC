@@ -21,11 +21,11 @@ export function getAuthServiceConfigs() {
       [
         {
           id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('327289361476293')
+          provider: new FacebookLoginProvider('your_app_id')
         },
         {
           id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider('77885596074-e50hrjrjh89tr02hqdvrt9rsnuiph31g.apps.googleusercontent.com')
+          provider: new GoogleLoginProvider('your_client_id')
         }
       ]
   );
@@ -49,7 +49,7 @@ export function getAuthServiceConfigs() {
     NgbModule,
     HttpClientModule,
     SocialLoginModule,
-    NgxStripeModule.forRoot('pk_test_QtMlZOhtfoGG7EFyuBpIftW8006LPwHKBC')
+    NgxStripeModule.forRoot('your_publishable_key')
   ],
   providers: [{
     provide: AuthServiceConfig,
