@@ -5,7 +5,7 @@ git clone https://github.com/kc795/angular_cape_crucible.git or alternatively do
 # For google sign in api, we need to generate client ID 
 go to https://console.developers.google.com
 
-1. In the dashboard section, click on "create" 
+1. In the dashboard section, click on "creae" 
 2. In the next screen you will find an auto generated project name. click "create" again in this page.
 3. Go to credentials section in the side menu. click on "create credentials" and select "OAuth Client ID"
 4. In the next page click "configure consent screen". 
