@@ -1,6 +1,6 @@
 # Download the project
 open terminal on your laptop and type the following command 
-git clone https://github.com/kc795/angular_cape_crucible.git or alternatively download the project as zip file
+git clone https://github.com/VajralaAlthaf/AngularCC or alternatively download the project as zip file
 
 # For google sign in api, we need to generate client ID 
 go to https://console.developers.google.com
